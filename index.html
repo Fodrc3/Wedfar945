@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirim Pesan ke WhatsApp</title>
+</head>
+<body>
+    <h1>Hubungi Kami via WhatsApp</h1>
+    <button id="whatsappButton">Kirim Pesan</button>
+
+    <script>
+        document.getElementById('whatsappButton').addEventListener('click', function () {
+            // Nomor telepon dan pesan yang akan dikirim
+            var phoneNumber = '6281234567890'; // Ganti dengan nomor WhatsApp tujuan
+            var message = 'Halo, saya ingin bertanya tentang layanan Anda.'; // Pesan yang akan dikirim
+
+            // Encode pesan untuk URL
+            var encodedMessage = encodeURIComponent(message);
+
+            // URL WhatsApp API
+            var whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            // Arahkan pengguna ke URL WhatsApp
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>
